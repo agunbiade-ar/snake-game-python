@@ -1,0 +1,5 @@
+import pygame
+
+CELL_SIZE = 15
+NUMBER_OF_CELLS = 40
+SNAKE_MOVE_EVENT = pygame.USEREVENT + 1

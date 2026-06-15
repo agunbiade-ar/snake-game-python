@@ -26,13 +26,13 @@ while running:
                 path = game.find_shortest_path_to_fruit(
                     target=pygame.Vector2(game.fruit.x, game.fruit.y)
                 )
-                if path and len(path):
+                if path and len(path) > 1:
                     game.snake.direction = path[1] - path[0]
                 else:
                     snake_tail = game.snake.body[-1]
                     path = game.find_shortest_path_to_fruit(target=snake_tail)
                     if path and len(path) > 1:
-                        game.snake.new_direction = path[1] - path[0]
+                        game.snake.direction = path[1] - path[0]
 
             game.snake.move(game.snake.direction)
 

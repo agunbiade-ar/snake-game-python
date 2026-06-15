@@ -31,7 +31,8 @@ while running:
                 else:
                     snake_tail = game.snake.body[-1]
                     path = game.find_shortest_path_to_fruit(target=snake_tail)
-                    game.snake.new_direction = path[1] - path[0]
+                    if path and len(path) > 1:
+                        game.snake.new_direction = path[1] - path[0]
 
             game.snake.move(game.snake.direction)
 
